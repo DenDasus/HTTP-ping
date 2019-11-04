@@ -35,7 +35,9 @@ unsigned short measDelay_ms = 1000;
 
 void PrintUsage() {
     printf("HTTP-ping utility. Usage:\n\r");
-    printf("http-ping -i <file name> [-d <delay between measurements in ms (def = 1000ms)>] [-c <meas count (def = 5)>]");
+    printf("http-ping -i <file name> \n\r");
+    printf("\t[-d <delay between measurements in ms (def = 1000ms)>] \n\r");
+    printf("\t[-c <meas count (def = 5)>]\n\r");
 }
 
 void PrintResults() {
@@ -44,7 +46,7 @@ void PrintResults() {
     while (item != NULL) {
         switch (item->err) {
             case ERR_NO_DNS_RECORDS_FOUND:
-                printf("%s - Site not found ", item->site);
+                printf("%s - Site not found\n\r", item->site);
                 break;
 
             case ERR_OK:
@@ -69,7 +71,7 @@ void PrintResults() {
 
             case ERR_OTHER:
             default:
-                printf("%s - Error in measurement ", item->site);
+                printf("%s - Error in measurement\n\r", item->site);
                 break;
         }
 
